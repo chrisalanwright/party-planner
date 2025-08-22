@@ -4,3 +4,14 @@ const API = BASE + COHORT;
 
 let parties = [];
 let chosenParty;
+
+async function getParties() {
+  try {
+    let response = await fetch(API + "/events");
+    let result = await response.json();
+    parties = result.data;
+    render();
+  } catch (e) {
+    console.error(e);
+  }
+}
