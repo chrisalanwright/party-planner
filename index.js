@@ -27,7 +27,7 @@ async function getParty() {
     }
 }
 
-function render()
+function render() {
     let $app = document.querySelector("#app");
     $app.innerHTML = `
     <h1>Party Planner</h1>
@@ -42,3 +42,12 @@ function render()
       </section>
     </main>
     `;
+
+    $app.querySelector("PartyList").replaceWith(PartyList());
+    $app.querySelector("ChosenParty").replaceWith(chosenParty());
+}
+
+async function init() {
+  await getParties();
+  render();
+}
