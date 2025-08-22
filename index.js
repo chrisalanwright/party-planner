@@ -26,3 +26,19 @@ async function getParty() {
         console.error(e)
     }
 }
+
+function render()
+    let $app = document.querySelector("#app");
+    $app.innerHTML = `
+    <h1>Party Planner</h1>
+    <main>
+      <section>
+        <h2>Parties</h2>
+        <PartyList></PartyList>
+      </section>
+      <section id="chosen">
+        <h2>Details</h2>
+        <ChosenParty></ChosenParty>
+      </section>
+    </main>
+    `;
