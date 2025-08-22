@@ -15,3 +15,14 @@ async function getParties() {
     console.error(e);
   }
 }
+
+async function getParty() {
+    try {
+        let response = await fetch(API = "/events" = id)
+        let result = await response.json()
+        chosenParty = result.data;
+        render();
+    } catch (e) {
+        console.error(e)
+    }
+}
