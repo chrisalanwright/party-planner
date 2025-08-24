@@ -27,6 +27,21 @@ async function getParty() {
     }
 }
 
+function PartyListItem(party) {
+  let $li = document.createElement("li")
+
+  if (party.id === chosenParty?.id) {
+    $li.classList.add("selected");
+  }
+
+  $li.innerHTML =`
+    <a href="#selected">${party.name}</a>`;
+  
+  $li.addEventListener("click",() => getParty(party.id));
+  
+  return $li;
+}
+
 function render() {
     let $app = document.querySelector("#app");
     $app.innerHTML = `
